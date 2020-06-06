@@ -1,248 +1,134 @@
-<style>  
-#ghost {  
-opacity:0.7;  
-position:absolute;  
-top:0;  
-right:200px;  
-}  
-  
-*{cursor:url(http://i.imgur.com/h0ZWJP2.png),auto!important}  
-}  
-  
-*{transition: all ease-in-out 0.2s}  
-  
-body {  
- overflow-x:hidden;  
- background:url()6px 80px no-repeat,  
- url()top center no-repeat,  
- url(https://i.imgur.com/JDr90WK.png)top 100px center no-repeat,url(https://i.imgur.com/brESwtf.png)top center repeat-x,url(x)top center/cover fixed}  
- *{font-family:Helvetica}a{color:#0CF !important}  
- a:hover{color:#3E020B !important}not{  
-a{a),auto}  
-}  
-  
-#galli {  
-position:relative;  
-z-index:0;  
-top:62px;  
-right:15px;  
-text-indent:11.2in;  
-}  
-#galli img {  
- transition: all ease-in-out 0.5s;  
- opacity:0.4;  
- -webkit-transition: all ease-in-out 0.5s;  
- -moz-transition: all ease-in-out 0.5s;  
- -o-transition: all ease-in-out 0.5s;  
- transition: all ease-in-out 0.5s;  
-}  
-#galli img:hover {  
- opacity:1;  
- -webkit-transition: all ease-in-out 0.5s;  
- -moz-transition: all ease-in-out 0.5s;  
- -o-transition: all ease-in-out 0.5s;  
- transition: all ease-in-out 0.5s;  
-}  
-  
-img[height='46px']:hover {  
--ms-filter:brightness(60%);  
--webkit-filter:brightness(60%);  
-filter:brightness(60%);  
--webkit-transition: all ease-in-out 0.5s;  
- -moz-transition: all ease-in-out 0.5s;  
- -o-transition: all ease-in-out 0.5s;  
- transition: all ease-in-out 0.5s;  
-}  
-  
-#lantern{  
-height:0px;  
-position:relative;  
-top:247px;  
-right:-15px;  
-text-align:center;  
-text-indent:-8.7in;  
-}  
-#lantern img{  
--webkit-transition: all ease-in-out 0.5s;  
- -moz-transition: all ease-in-out 0.5s;  
- -o-transition: all ease-in-out 0.5s;  
- transition: all ease-in-out 0.5s;  
- opacity:0;  
-}  
-#lantern img:hover{  
-opacity:1;  
--webkit-transition: all ease-in-out 0.5s;  
- -moz-transition: all ease-in-out 0.5s;  
- -o-transition: all ease-in-out 0.5s;  
- transition: all ease-in-out 0.5s;  
-}  
-#lantern2{  
-height:0px;  
-position:relative;  
-top:247px;  
-right:23px;  
-text-align:center;  
-text-indent:9.1in;  
-}  
-#lantern2 img{  
--webkit-transition: all ease-in-out 0.5s;  
- -moz-transition: all ease-in-out 0.5s;  
- -o-transition: all ease-in-out 0.5s;  
- transition: all ease-in-out 0.5s;  
- opacity:0;  
-}  
-#lantern2 img:hover{  
-opacity:1;  
- -webkit-transition: all ease-in-out 0.5s;  
- -moz-transition: all ease-in-out 0.5s;  
- -o-transition: all ease-in-out 0.5s;  
- transition: all ease-in-out 0.5s;  
-}  
-#cf p {  
- position:relative;  
- top:-10px;  
- color:white;  
-}  
-#cf p a { text-decoration: none;}  
-#cf p a:hover {color:white;}  
-#cf img {  
- opacity:0.5;  
- position:absolute;  
- -webkit-transition: opacity 0.2s ease-in-out;  
- -moz-transition: opacity 0.2s ease-in-out;  
- -o-transition: opacity 0.2s ease-in-out;  
- transition: opacity 0.2s ease-in-out;  
-}  
-#cf .bottom:hover {opacity:1;}  
-#player {  
-padding-top: 41px;  
-height:100px;  
-position:relative;  
-top:230px;  
-right:100;  
-text-align:center;  
-}  
-#navbar {  
- position:absolute;  
- top:2px;  
- right:8px;  
- text-align:right;  
-}  
-#navbar a { text-decoration:none;}  
-  
-#navbar img {  
- opacity:0.5;  
- transition: all ease-in-out 0.2s;  
- }  
-#navbar img:hover {  
- opacity:1;  
- transition: all ease-in-out 0.2s;  
-}  
-#editbar a {text-decoration:none;}  
-  
-#editbar{  
- position:absolute;  
- top:51px;  
- right:0px;  
- left:4px;  
-}  
-#editbar img {  
- opacity:0.5;  
- transition: all ease-in-out 0.2s;  
- }  
-#editbar img:hover {  
- opacity:1;  
- transition: all ease-in-out 0.2s;  
-}  
-#logo {  
- position:absolute;  
- top:0px;  
- left:0px;  
-}  
-#moon {  
-position:absolute;  
-opacity:0;  
-z-index:1;  
-top:34px;  
-left:55px;  
-text-indent:0.3in;  
-transition: all ease-in-out 0.5s;  
-}  
-#moon:hover {  
- opacity:1;  
-transition: all ease-in-out 0.5s;  
-}  
-#moon2 {  
-position:absolute;  
-z-index:-2;  
-top:34px;  
-left:55px;  
-text-indent:0.3in;  
-}  
-  
-#hitbox {  
- opacity:0;  
- color:C40620;  
- z-index:3;  
- font-family:Helvetica;  
- text-align:center;  
- border:2px solid #C40620;  
- position:absolute;  
- top:360px;  
- right:0px;  
- height:238px;  
- width:45px;  
- background: rgba(25, 25, 25, .5);  
- color:#C40620  
-}  
-#banner {  
- position:absolute;  
- top:0px;  
- right:50px;  
- left:4px;  
-}  
-#banner img{  
- opacity:0.5;  
- border:3px solid #C40620;  
- transition: all ease-in-out 0.2s;  
-}  
-#banner img:hover{  
- opacity:1;  
- border:3px solid #C40620;  
- transition: all ease-in-out 0.2s;  
-}  
-</style>  
-<body>  
-</div>  
-<div id="moon">  
-<img src="https://i.imgur.com/2vN1R1z.png" width="255" /></a>  
-</div>  
-<div id="moon2">  
-<img src="https://i.imgur.com/dlMdAmp.png" width="255" />  
-</div>  
-<div id="lantern">  
-<img src="https://i.imgur.com/dlMdAmp.png"/> </a>  
-</div>  
-<div id="lantern2">  
-<img src="https://i.imgur.com/dlMdAmp.png"/> </a>  
-</div>  
-<div id="galli">  
-<img src="https://i.imgur.com/dlMdAmp.png"/></a>  
-</div>  
-<div id="player">  
-</br>  
-</div>  
-<div id="cf">  
-<div style="text-align: center;"><br />  
-<div id="banner">  
-</div>  
-</br> </br> </br> </br> </br> </br> </br>  
-</div>  
-</div>  
-</div>  
-</center>  
-</body>  
-</html>  
-</center>  
-</body>  
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>RomskoSrce</title>
+	<style>  
+	@import url(https://fonts.googleapis.com/css?family=Lato:200,300,400);
+	
+	body {  
+		font-family: 'Lato', serif;
+		background: url(https://i.imgur.com/Z93jAYK.png) no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		overflow: hidden;
+		text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+		text-rendering: optimizeLegibility !important;
+		-webkit-font-smoothing: antialiased !important;
+		font-size: 13px;
+		font-style: bold;
+	}  
+
+	.chat {
+		width: 728px;
+		height: 480px;
+		margin-top: 83px;
+		background-image: url(https://i.imgur.com/5dPWTYS.gif);
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		border-radius: 10px;
+		z-index: 999;
+	}
+	
+	.powerbox {
+		margin-top: 90px;
+		width: 200px;
+		height: 180px;
+		position: fixed;
+		top: 0;
+		right: 0;
+		background-color: #341f97;
+		-webkit-border-top-left-radius: 20px;
+		-webkit-border-bottom-left-radius: 5px;
+		-moz-border-radius-topleft: 20px;
+		-moz-border-radius-bottomleft: 5px;
+		border-top-left-radius: 20px;
+		border-bottom-left-radius: 5px;
+	}
+	
+	.id,
+	.name,
+	.status, 
+	.price,
+	.online,
+	.time {
+		color: #ffffff;
+		position: fixed;
+		margin-top: 100px;
+		top: 0;
+		right: 20px;
+	}
+	
+	.name {
+		margin-top: 130px;
+	}
+	
+	.status {
+		margin-top: 160px;
+	}
+	
+	.price {
+		margin-top: 190px;
+	}
+	
+	.online {
+		margin-top: 220px;
+	}
+	
+	.time {
+		margin-top: 250px;
+	}
+	</style>  
+</head>
+<body>
+	<!--
+	DISABLED FOR NOW ;c
+	<div align="center">
+		<div class="chat"></div>
+	</div>
+	-->
+	<div class="power">
+		<div class="powerbox">
+			<h2 class="id">Loading...</h2>
+			<h2 class="name">Loading...</h2>
+			<h2 class="status">Loading...</h2>
+			<h2 class="price">Loading...</h2>
+			<h2 class="online">Loading...</h2>
+		</div>
+		<div class="chatinfo">
+		<div class="time"></div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script>
+	String.prototype.capitalize = function() {
+		return this.charAt(0).toUpperCase() + this.slice(1);
+	}
+	const updateUsers = () => {
+		$.getJSON("https://static.xat.com/RomskoSrce/usersonline.php", function(data) {
+			$('.online').html(data.result);
+		});
+	}
+	const updatePower = () => {
+		$.getJSON("https://xatblog.net/api/latest?json", function(data) {
+			$('.id').html(data.result.id);
+			$('.name').html(data.result.name.capitalize());
+			$('.status').html(data.result.status.capitalize());
+			$('.price').html(data.result.price);
+		});
+	}
+	const updateTime = () => {
+		let dateString = new Date().toLocaleString("en-US");
+		let fTime = dateString.replace(", ", " - ");
+		$('.time').html(fTime);
+	}
+	updatePower();
+	updateUsers();
+	updateTime();
+	setInterval(updateUsers, 40*1000); // every 40 seconds
+	setInterval(updateTime, 1000); // every 1 sec obvious
+	</script>
+</body>
 </html>
