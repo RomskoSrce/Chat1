@@ -1,134 +1,83 @@
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>RomskoSrce</title>
-	<style>  
-	@import url(https://fonts.googleapis.com/css?family=Lato:200,300,400);
-	
-	body {  
-		font-family: 'Lato', serif;
-		background: url(https://i.imgur.com/5dPWTYS.gif) no-repeat center center fixed;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
-		overflow: hidden;
-		text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
-		text-rendering: optimizeLegibility !important;
-		-webkit-font-smoothing: antialiased !important;
-		font-size: 13px;
-		font-style: bold;
-	}  
+ <style>
+            @import url(https://fonts.googleapis.com/css?family=Poiret+One);
 
-	.chat {
-		width: 728px;
-		height: 480px;
-		margin-top: 83px;
-		background-image: url(https://i.imgur.com/5dPWTYS.gif);
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
-		border-radius: 10px;
-		z-index: 999;
-	}
-	
-	.powerbox {
-		margin-top: 90px;
-		width: 200px;
-		height: 180px;
-		position: fixed;
-		top: 0;
-		right: 0;
-		background-color: #341f97;
-		-webkit-border-top-left-radius: 20px;
-		-webkit-border-bottom-left-radius: 5px;
-		-moz-border-radius-topleft: 20px;
-		-moz-border-radius-bottomleft: 5px;
-		border-top-left-radius: 20px;
-		border-bottom-left-radius: 5px;
-	}
-	
-	.id,
-	.name,
-	.status, 
-	.price,
-	.online,
-	.time {
-		color: #ffffff;
-		position: fixed;
-		margin-top: 100px;
-		top: 0;
-		right: 20px;
-	}
-	
-	.name {
-		margin-top: 130px;
-	}
-	
-	.status {
-		margin-top: 160px;
-	}
-	
-	.price {
-		margin-top: 190px;
-	}
-	
-	.online {
-		margin-top: 220px;
-	}
-	
-	.time {
-		margin-top: 250px;
-	}
-	</style>  
-</head>
-<body>
-	<!--
-	DISABLED FOR NOW ;c
-	<div align="center">
-		<div class="chat"></div>
-	</div>
-	-->
-	<div class="power">
-		<div class="powerbox">
-			<h2 class="id">Loading...</h2>
-			<h2 class="name">Loading...</h2>
-			<h2 class="status">Loading...</h2>
-			<h2 class="price">Loading...</h2>
-			<h2 class="online">Loading...</h2>
-		</div>
-		<div class="chatinfo">
-		<div class="time"></div>
-	</div>
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<script>
-	String.prototype.capitalize = function() {
-		return this.charAt(0).toUpperCase() + this.slice(1);
-	}
-	const updateUsers = () => {
-		$.getJSON("https://static.xat.com/RadioKissRom/usersonline.php", function(data) {
-			$('.online').html(data.result);
-		});
-	}
-	const updatePower = () => {
-		$.getJSON("https://xatblog.net/api/latest?json", function(data) {
-			$('.id').html(data.result.id);
-			$('.name').html(data.result.name.capitalize());
-			$('.status').html(data.result.status.capitalize());
-			$('.price').html(data.result.price);
-		});
-	}
-	const updateTime = () => {
-		let dateString = new Date().toLocaleString("en-US");
-		let fTime = dateString.replace(", ", " - ");
-		$('.time').html(fTime);
-	}
-	updatePower();
-	updateUsers();
-	updateTime();
-	setInterval(updateUsers, 40*1000); // every 40 seconds
-	setInterval(updateTime, 1000); // every 1 sec obvious
-	</script>
-</body>
+            html,
+            body {
+              /*background-image: linear-gradient(0deg, #36295e, #1c1045);*/
+              height: 100%;
+              overflow: hidden;
+              display:flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+              justify-content: center;
+              align-content: flex-start;
+              align-items: center;
+            }
+
+            .center {
+              margin: 0 auto;
+            }
+
+            #outer-ring {
+              position: absolute;
+              left: calc(50% - 222px);
+              height: 250px;
+              width: 250px;
+              /*background-image: linear-gradient(135deg, #000050 0%, #212529 5%, #17a2b8 15%, #8a8a8a 50%, #dc3545 100%);*/
+              border-radius: 50%;
+              
+              /*  Rotate  */
+              animation-duration: 2s;
+              animation-name: rotate;
+              animation-iteration-count: infinite;
+              top: 132px;
+              animation-timing-function: linear;
+            }
+
+            #inner-ring {
+              position: absolute;
+              left: calc(50% - 212px);
+              height: 230px;
+              width: 230px;
+              border-radius: 50%;
+              top: 141px;
+            }
+
+            @keyframes rotate {
+                0% {transform:rotate(0deg);}
+                100% {transform:rotate(360deg);}
+            }
+
+            #text {
+                font-size: 39px;
+                font-weight: bold;
+                color: hsl(254, 100%, 99%);
+                text-shadow: 1px 1px hsla(0,0%,5%,1), -1px -1px hsla(0,0%,5%,1);
+                font-family: 'Poiret One', cursive;
+                letter-spacing: 5px;
+                text-align: center;
+                vertical-align: middle;
+                line-height: 230px;
+            }
+
+            </style>
+            <div id="outer-ring" class="center"></div>
+            <div id="inner-ring" class="center">
+                <div id="text"></div>
+            </div>
+    </body>
+    <script>
+        window.addEventListener("load", function(){
+            const params = new URLSearchParams(decodeURIComponent(window.location.search));
+
+            document.getElementById("text").innerHTML = params.get('name');
+
+            document.body.style.backgroundImage = "linear-gradient(0deg, #" + params.get('bg2') + ", #" + params.get('bg1') + ")"
+
+            document.getElementById("inner-ring").style.backgroundImage = "linear-gradient(0deg, #" + params.get('bg2') + ", #" + params.get('bg1') + ")"
+
+            document.getElementById("outer-ring").style.backgroundImage = "linear-gradient(135deg, #000000 0%, #000000 5%, #" + params.get('c3') + " 15%, #" + params.get('c1') + " 50%, #" + params.get('c2') + " 100%)"
+        });
+    </script>
+    <!--<script src="assets/js/rubyyy.js"></script>-->
 </html>
