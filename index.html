@@ -107,7 +107,7 @@
 		return this.charAt(0).toUpperCase() + this.slice(1);
 	}
 	const updateUsers = () => {
-		$.getJSON("https://static.xat.com/RomskoSrce/usersonline.php", function(data) {
+		$.getJSON("https://static.xat.com/RadioKissRom/usersonline.php", function(data) {
 			$('.online').html(data.result);
 		});
 	}
