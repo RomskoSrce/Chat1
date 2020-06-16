@@ -1,458 +1,288 @@
-<style>     
-body {    
-  overflow-x:hidden;   
-  background:url()center 43px no-repeat,    
-  url()no-repeat,     
-  url(http://i.imgur.com/TfUv9aA.png)top center no-repeat,    
-  url()top right no-repeat,     
-  url()top center repeat-x,     
-  url(http://i.imgur.com/yFUKaJr.png)top center repeat #000}     
-  *{font-family:Helvetica}a{color:#0CF !important}    
-  a:hover{color:#08F !important}    
-  *{cursor:url(http://i.imgur.com/WSHGiFi.png),auto}     
-  embed{border-radius: 20px}embed{border:3px solid #36040C}     
-  embed:hover{border:3px solid #36040C}    
-  embed{transition: all ease-in-out 0.5s;    
-}     
-#galli {     
-position:relative;     
-z-index:0;     
-top:34px;     
-right:33;     
-text-indent:9.4in;     
-}     
-#galli img {     
-   transition: all ease-in-out 0.5s;     
-   opacity:0.4;    
-    -webkit-transition: all ease-in-out 0.5s;     
-  -moz-transition: all ease-in-out 0.5s;     
-  -o-transition: all ease-in-out 0.5s;     
-  transition: all ease-in-out 0.5s;     
-}     
-#galli img:hover {     
-  opacity:1;    
- -webkit-transition: all ease-in-out 0.5s;     
-  -moz-transition: all ease-in-out 0.5s;     
-  -o-transition: all ease-in-out 0.5s;     
-  transition: all ease-in-out 0.5s;     
-}     
-a.tooltip {outline:none;}    
-a.tooltip strong {line-height:10px;}    
-a.tooltip:hover {text-decoration:none;}     
-a.tooltip span {    
-    z-index:10;display:none; padding:10px 12px;    
-    position:relative;    
-    right:55px;     
-    top:2px;    
-    width:173px; line-height:16px;    
-}    
-a.tooltip:hover span{    
-    text-align: center;    
-    font-family: Helvetica;    
-    font-size:12px;    
-    display:inline; position:absolute;     
-    border:2px solid #FFF;  color:#FFF;    
-    background:#333 url(http://i.imgur.com/0ysy4rQ.png) repeat-x 0 0;    
-    border:3px solid #444;    
-}    
-.callout {z-index:20;position:absolute;top:7px;border:0;left:199px;}    
+<style>  
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: 'Exo', sans-serif;
+}
+
+.context {
+    position: absolute;
+    top: 40vh;
+    left: 5vh;
+}
+
+.context h1{
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+}
+
+.area{
+    background: #000062;  
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
+    width: 100%;
+    height:100vh;
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
     
-a.tooltip span    
-{border-radius:4px;}    
-    
-a.tooltip2 {outline:none;}    
-a.tooltip2 strong {line-height:10px;}    
-a.tooltip2:hover {text-decoration:none;}     
-a.tooltip2 span {    
-    z-index:10;display:none; padding:10px 12px;    
-    position:relative;    
-    right:55px;     
-    top:3px;    
-    width:103px; line-height:16px;    
-}    
-a.tooltip2:hover span{    
-    text-align: center;    
-    font-family: Helvetica;    
-    font-size:12px;    
-    display:inline; position:absolute;     
-    border:2px solid #FFF;  color:#FFF;    
-    background:#333 url(http://i.imgur.com/0ysy4rQ.png) repeat-x 0 0;    
-    border:3px solid #444;    
-}    
-.callout2 {z-index:20;position:absolute;top:7px;border:0;left:129px;}    
-    
-a.tooltip2 span    
-{ border-radius:4px;}    
-    
-[name=social]{position:absolute}     
-[name=social]{z-index:1}     
-[name=social]{width:64px}     
-[name=social]{top:108px}     
-[name=social]{right:0}     
-img[height='42px']{    
-  -ms-filter:brightness(100%);    
-  -webkit-filter:brightness(100%);     
-  filter:brightness(100%);     
-  -webkit-transition: all ease-in-out 0.5s;     
-  -moz-transition: all ease-in-out 0.5s;     
-  -o-transition: all ease-in-out 0.5s;     
-  transition: all ease-in-out 0.5s;     
-}    
-img[height='42px']:hover {     
--ms-filter:brightness(60%);    
--webkit-filter:brightness(60%);     
-filter:brightness(60%);     
--webkit-transition: all ease-in-out 0.5s;     
-  -moz-transition: all ease-in-out 0.5s;     
-  -o-transition: all ease-in-out 0.5s;     
-  transition: all ease-in-out 0.5s;     
-}     
-[name=social] a{text-decoration:none;}    
-[name=social] a:hover{text-decoration:none;}    
-    
-[name=social2]{position:absolute}     
-[name=social2]{z-index:1}     
-[name=social2]{width:64px}     
-[name=social2]{top:168px}     
-[name=social2]{right:0}     
-[name=social2] a{text-decoration:none;}    
-[name=social2] a:hover{text-decoration:none;}    
-    
-[name=social3]{position:absolute}     
-[name=social3]{z-index:1}     
-[name=social3]{width:64px}     
-[name=social3]{top:510px}     
-[name=social3]{right:0}     
-[name=social3] a{text-decoration:none;}    
-[name=social3] a:hover{text-decoration:none;}    
-    
-[name=social4]{position:absolute}     
-[name=social4]{z-index:1}     
-[name=social4]{width:64px}     
-[name=social4]{top:380px}     
-[name=social4]{right:0}     
-[name=social4] a{text-decoration:none;}    
-[name=social4] a:hover{text-decoration:none;}    
-    
-[name=social5]{-webkit-filter: brightness(0.3);    
-filter:brightness(0.3);}    
-    
-[name=social5]{position:absolute}     
-[name=social5]{z-index:1}     
-[name=social5]{width:64px}     
-[name=social5]{top:320px}     
-[name=social5]{right:0}     
-[name=social5] a{text-decoration:none;}    
-[name=social5] a:hover{text-decoration:none;}    
-    
-#lantern{     
-height:0px;     
-position:relative;     
-top:207px;     
-right:0;     
-text-align:center;     
-text-indent:-8.7in;     
-}     
-#lantern img{     
--webkit-transition: all ease-in-out 0.5s;     
-  -moz-transition: all ease-in-out 0.5s;     
-  -o-transition: all ease-in-out 0.5s;     
-  transition: all ease-in-out 0.5s;     
-  opacity:0;     
-}     
-#lantern img:hover{     
-opacity:1;     
--webkit-transition: all ease-in-out 0.5s;     
-  -moz-transition: all ease-in-out 0.5s;     
-  -o-transition: all ease-in-out 0.5s;     
-  transition: all ease-in-out 0.5s;     
-}     
-#lantern2{     
-height:0px;     
-position:relative;     
-top:207px;     
-right:0;     
-text-align:center;     
-text-indent:9.1in;     
-}     
-#lantern2 img{     
--webkit-transition: all ease-in-out 0.5s;     
-  -moz-transition: all ease-in-out 0.5s;     
-  -o-transition: all ease-in-out 0.5s;     
-  transition: all ease-in-out 0.5s;     
-  opacity:0;     
-}     
-#lantern2 img:hover{     
-opacity:1;     
-  -webkit-transition: all ease-in-out 0.5s;     
-  -moz-transition: all ease-in-out 0.5s;     
-  -o-transition: all ease-in-out 0.5s;     
-  transition: all ease-in-out 0.5s;     
-}     
-embed {           
--webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%); /*ios 7 border-radius-bug */           
--webkit-transform: rotate(0.000001deg); /*mac os 10.6 safari 5 border-radius-bug */           
--webkit-border-radius: 6px;            
--moz-border-radius: 6px;           
-border-radius: 6px;            
-overflow: hidden;             
-}             
-#cf p {     
-  position:relative;     
-  top:-10px;     
-  color:white;     
-}     
-#cf p a { text-decoration: none;}     
-#cf p a:hover {color:white;}     
-#cf img {     
-  opacity:0.5;     
-  position:absolute;     
-  -webkit-transition: opacity 1s ease-in-out;     
-  -moz-transition: opacity 1s ease-in-out;     
-  -o-transition: opacity 1s ease-in-out;     
-  transition: opacity 1s ease-in-out;     
-}     
-#cf .bottom:hover {opacity:1;}     
-#player {     
-padding-top:41px;     
-height:10px;     
-background:url() top 0px center no-repeat;      
-position:relative;     
-top:320px;     
-right:0;     
-text-align:center;     
-}     
-#navbar {     
-  position:absolute;     
-  top:2px;     
-  right:8px;    
-  text-align:right;     
-}     
-#navbar a { text-decoration:none;}    
-    
-#navbar img {     
-  opacity:0.5;    
-  transition: all ease-in-out 0.2s;     
-  }     
-#navbar img:hover {     
-  opacity:1;    
-  transition: all ease-in-out 0.2s;     
-}     
-#editbar a {text-decoration:none;}    
-    
-#editbar{    
-  position:absolute;    
-  top:80px;    
-  right:0px;   
-  left:4px;   
-}    
-#editbar img {     
-  opacity:0.5;    
-  transition: all ease-in-out 0.2s;     
-  }     
-#editbar img:hover {     
-  opacity:1;    
-  transition: all ease-in-out 0.2s;     
-}     
-#logo {    
-  position:absolute;     
-  top:0px;     
-  left:0px;     
-}    
-#moon {     
-position:absolute;     
-opacity:0;    
-z-index:1;     
-top:34px;     
-left:0;     
-text-indent:0.3in;     
-transition: all ease-in-out 0.5s;    
-}     
-#moon:hover {    
-  opacity:1;    
-transition: all ease-in-out 0.5s;    
-}    
-#moon2 {     
-position:absolute;     
-z-index:-2;     
-top:34px;     
-left:0;     
-text-indent:0.3in;     
-}     
-#menu {    
-  overflow:auto;    
-  z-index:2;    
-  xborder-radius:20px;    
-  font-family:Helvetica;    
-  text-align:center;    
-  border:2px solid #444;    
-  position:absolute;    
-  top:300px;    
-  right:0px;    
-  height:270px;    
-  width:120px;    
-  background: rgba(25, 25, 25, 1);    
-  color:#FFF    
-}    
-#menu h1 {    
-  text-align:center;    
-  text-decoration:underline;    
-  font-size:14px;    
-}    
-#menu2 {    
-  overflow:auto;    
-  z-index:2;    
-  xborder-radius:20px;    
-  text-align:center;    
-  border:2px solid #444;    
-  position:absolute;    
-  top:300px;    
-  right:122px;    
-  height:270px;    
-  width:120px;    
-  background: rgba(25, 25, 25, 1);    
-  color:#FFF    
-}    
-#menu2 img {    
-  text-align:center;    
-  opacity:.3;    
-}    
-#menu2 img:hover {    
-  opacity:1;    
-}    
-#menu2 h1 {    
-  text-decoration:underline;    
-  text-align:center;    
-  font-size:14px;    
-}    
-#menugroup{    
-  z-index:2;    
-  position:absolute;    
-  top:20px;    
-  right:-200px;    
-  opacity:0;    
-  transition: all ease-in-out 0.5s;    
-}    
-#menugroup:hover {    
-  z-index:4;    
-  top:20px;    
-  right:0px;    
-  opacity:1;    
-  transition: all ease-in-out 0.5s;    
-}    
-::-webkit-scrollbar {    
-    width: 11px;    
-}    
-     
-/* Track */    
-::-webkit-scrollbar-track {    
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);     
-    -webkit-border-radius: 10px;    
-    border-radius: 10px;    
-}    
-     
-/* Handle */    
-::-webkit-scrollbar-thumb {    
-    -webkit-border-radius: 10px;    
-    border-radius: 10px;    
-    background: rgba(0,0,0,0.8);     
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);     
-}    
-::-webkit-scrollbar-thumb:window-inactive {    
-  background: rgba(15,15,15,0.5);     
-}    
-#hitbox {    
-  opacity:0;    
-  color:#FFF;    
-  z-index:3;    
-  font-family:Helvetica;    
-  text-align:center;    
-  border:2px solid #444;    
-  position:absolute;    
-  top:360px;    
-  right:0px;    
-  height:238px;    
-  width:45px;    
-  background: rgba(25, 25, 25, .5);    
-  color:#FFF    
-}    
-#banner {   
-  position:absolute;    
-  top:64px;    
-  right:1200px;   
-  left:0px;   
-}   
-#banner img{   
-  opacity:0.5;   
-  border:3px solid #183f6a;   
-  transition: all ease-in-out 0.5s;    
-}   
-#banner img:hover{   
-  opacity:1;   
-  border:3px solid #215894;   
-  transition: all ease-in-out 0.5s;    
-}   
-#ghost {   
-opacity:0.7;   
-position:absolute;   
-top:0;   
-right:200px;   
-}   
-</style>     
-     
-<body>     
-   
-<td width="0"<img src="ABC" Links cannot contain images  src="ABC" Links cannot contain images  src="ABC" Links cannot contain images  src=""/>   
-</a>   
-</div>   
-    
-<div id="moon">    
-<img src="http://i.imgur.com/dlMdAmp.png" width="255" />    
-</div>    
-<div id="moon2">    
-  <img src="http://i.imgur.com/dlMdAmp.png" width="255" />    
-</div>    
-<div id="logo">    
-<a href="http://xat.com/" target="_blank" ><img src="http://i.imgur.com/Sv28DK3.png"/>    
-</div>    
-<div id="navbar">      
- <a href="http://xat.com/Help_" target="_blank"><img src="http://i.imgur.com/Sv28DK3.png"></a>     
-</div>     
-<div id="lantern">     
-<img src="http://i.imgur.com/dlMdAmp.png"/>     
-</div>     
-<div id="lantern2">     
-  <img src="http://i.imgur.com/dlMdAmp.png"/>     
-</div>     
-<div style="text-align:right" name="social">       
-<a href="http://romskosrce.com" target="_blank" class="tooltip"><img height="42px" src="http://i.imgur.com/eL49XCT.gif"/>      
-<span>      
-        <img class="callout" src="http://i.imgur.com/NGytJeJ.gif" />      
-        <strong>Sajt RomskoSrce</strong><br />      
-    </span>      
-</div>      
-      
-<div style="text-align:right" name="social2">       
-</a>      
-<a href="http://tinychat.com/romskosrce" target="_blank" class="tooltip2"><img height="42px" src="http://i.imgur.com/eL49XCT.gif"/>      
-<span>      
-        <img class="callout2" src="http://i.imgur.com/NGytJeJ.gif" />      
-        <strong>Video chat</strong><br />      
-    </span>      
-</a>      
-</div>      
-</div>      
-<div id="galli">       
-<img src="http://i.imgur.com/dlMdAmp.png"/>     
-</div>     
-<div id="editbar">
-</div>     
-<div id="player">
-<audio controls autoplay="autoplay"><source src="http://62.210.24.124:8475/;stream.mp3" type="audio/mp3"></audio>
-<div style="text-align: center;">
-  </br>  
-</div>  
-<div id="cf">  
-<div style="text-align: center;"><br />  
-<div id="banner">
- 
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+	
+p {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+}
+
+.word {
+  position: absolute;
+  width: 220px;
+  opacity: 0;
+}
+
+.letter {
+  display: inline-block;
+  position: relative;
+  float: left;
+  transform: translateZ(25px);
+  transform-origin: 50% 50% 25px;
+}
+
+.letter.out {
+  transform: rotateX(90deg);
+  transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.letter.behind {
+  transform: rotateX(-90deg);
+}
+
+.letter.in {
+  transform: rotateX(0deg);
+  transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.facebook {
+  color: #14A0F9;
+}
+
+.twitter {
+  color: #1DA1F2;
+}
+
+.html5group {
+  color: #F7C731;
+}
+
+.html5wiki {
+  color: #F5F5F5;
+}
+
+.midnight {
+  color: #2c3e50;
+}
+
+@keyframes animate {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
+	
+.animtext {
+	margin-left: 73px;
+}
+
+</style>
+</head>
+	
+<body>
+  
+<div class="context">
+      <h1><img src="https://i.imgur.com/AbOZKAn.gif" width="60"> RomskoSrce</h1>
+<p class="animtext">
+		<span class="word html5group">xat.com/RomskoSrce</span>
+    <span class="word facebook">www.romskosrce.com</span>
+		<span class="word html5wiki">https://html5-chat.com/chat/16694</span>
+		
+	</p>
+<p>
+</div>
+
+<div class="area" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+    </div>
+  </body>
+</html>
+<script>
+var words = document.getElementsByClassName('word');
+var wordArray = [];
+var currentWord = 0;
+
+words[currentWord].style.opacity = 1;
+for (var i = 0; i < words.length; i++) {
+  splitLetters(words[i]);
+}
+
+function changeWord() {
+  var cw = wordArray[currentWord];
+  var nw = currentWord == words.length-1 ? wordArray[0] : wordArray[currentWord+1];
+  for (var i = 0; i < cw.length; i++) {
+    animateLetterOut(cw, i);
+  }
+  
+  for (var i = 0; i < nw.length; i++) {
+    nw[i].className = 'letter behind';
+    nw[0].parentElement.style.opacity = 1;
+    animateLetterIn(nw, i);
+  }
+  
+  currentWord = (currentWord == wordArray.length-1) ? 0 : currentWord+1;
+}
+
+function animateLetterOut(cw, i) {
+  setTimeout(function() {
+		cw[i].className = 'letter out';
+  }, i*80);
+}
+
+function animateLetterIn(nw, i) {
+  setTimeout(function() {
+		nw[i].className = 'letter in';
+  }, 340+(i*80));
+}
+
+function splitLetters(word) {
+  var content = word.innerHTML;
+  word.innerHTML = '';
+  var letters = [];
+  for (var i = 0; i < content.length; i++) {
+    var letter = document.createElement('span');
+    letter.className = 'letter';
+    letter.innerHTML = content.charAt(i);
+    word.appendChild(letter);
+    letters.push(letter);
+  }
+  
+  wordArray.push(letters);
+}
+
+changeWord();
+setInterval(changeWord, 4000);
+</script>
